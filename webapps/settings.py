@@ -26,7 +26,7 @@ SECRET_KEY = 'z9s(pdfgex+u@1r%11yqxl+du212inwt&(g=jjg!a)y^k%)(^8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','ratemetest.herokuapp.com']
 
 
 # Application definition
