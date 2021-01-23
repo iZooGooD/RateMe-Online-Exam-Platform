@@ -1,1 +1,1 @@
-web: gunicorn rateme.wsgi
+web: gunicorn webapps.wsgi
