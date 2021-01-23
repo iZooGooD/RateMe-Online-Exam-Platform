@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% block dashboard_page %}
+    <div class="container text-center">
+    <h3 class=" mt-4">Hello {{ request.user.username}}, how would you like to get started ?</h3>
+    <button class="dashboard-button" data-toggle="modal" data-target="#createTestModal"> <i class="fas fa-copy"></i> Create a new test ?</button>
+    <button class="dashboard-button"> <i class="fas fa-book-reader"></i> Pick a test from our library ?</button>
+    </div>
+    <div class="container mytest">
+        <h4 class="text-center">My Tests</h4>
+     <div class="dashboard-tests row">
+    {% if tests %}
+    {% if error.error_code == 0 %}
+    {% for test in tests %}
+     <div class="my-test col-3">
+        <h6 class="my-test-title text-center">{{ test.test_name }}</h4>
+          <p class="my-test-fields"><i class="fas fa-link my-test-icons"></i> Test Link/Id: {{ test.id}}</p>
+          <p class="my-test-fields"><i class="fas fa-border-all my-test-icons"></i> Total questions: {{ test.total_question}}</p>
+           <p class="my-test-fields"><i class="fas fa-clock my-test-icons"></i> Total time: {{ test.total_time }}</p>
+           <p class="my-test-fields"><i class="fas fa-key my-test-icons"></i> Test password: {{ test.test_password}}</p>
+           <p class="my-test-fields"><i class="fas fa-users my-test-icons"></i> Total submissions: {{ test.total_submissions}}</p>
+           <p class="my-test-fields"><a href="{% url 'testdetails' test.id %}">Click here to edit details</a></p>
+     {% endfor %}
+     {% else %}
+     <h5 class="text-center">You have not created any tests yet, go ahed and create one</h5>
+     {% endif %}
+     
+     {% else %}
+     <h5 class="text-center">You have not created any tests yet, go ahed and create one</h5>
+     {% endif %}
+     </div>    
+
+
+
+
+     </div>
+
+
+
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade " id="createTestModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Create new test</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form action="{% url 'processdata' %}" method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Test name" name="test_name">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Test link" name="test_link" disabled>
+                    <small class="text-muted">Example -  www.rateme.com/starttest/"yourlinkhere"</small><br>
+                    <small class="text-warning">Link should be unique</small>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Test Password" name="test_password">
+
+              </div>
+                <div class="form-group">
+                    <label for="purpose">What kind of test you are creating ?</label> 
+                    <select class="form-control" name="test_category">
+                        <option value="exam">Exam</option>
+                        <option value="exam">Skill assesment</option>
+                        <option value="exam">Campus hiring</option>
+                        <option value="exam">Coding</option>
+                        <option value="exam">Entrance exams</option>
+                        <option value="exam">Hackathon</option>
+                        <option value="exam">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="csvfile" name="mycsvfile">
+                    <label class="custom-file-label" id="filename" for="customFile">Choose file</label>
+                    <small class="text-muted">*Please select a csv file only</small>
+                  </div>
+                 
+  
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Test time in minutes" name="test_time">
+                </div>
+
+
+   
+  
+         
+        
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button  type="submit" class="btn btn-primary">Save changes</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<script>
+ f=new file_box(document.getElementById("csvfile"));
+ f.render_file_name(document.getElementById("filename"));
+
+
+</script>
+
+{% endblock %}

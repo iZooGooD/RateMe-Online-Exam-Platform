@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block index_page %}
+<div class="section hero-section">
+    <div>
+        <h4 class="section-title-lg">An intelligent plaform to test your skills</h4>
+        <p class="section-text">Looking to create a test ? this is the plaform you really want to check out, and yes its free!</p>
+        <a class="hero-button" href="{% url 'login' %}">Create a test</a > <a class="hero-button" href="{% url 'jointest' %}"> Join test</a>
+    </div>
+    <img class="ml-5" src="{% static 'img/edited.jpg'%}">
+</div>
+{% endblock %}
+
+
+
+

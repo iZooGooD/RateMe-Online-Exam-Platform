@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.container{
+    width: 80%;
+    margin:auto;
+}
+
+</style>
+<body>
+<div class="container">
+<h4>You successfully logged in </h4>
+<p> {{request.session.email}}</p>
+<p>{{request.META}}</p>
+<a href="logout">Logout</a>
+
+</form>
+
+</div>
+   
+</body>
+</html>

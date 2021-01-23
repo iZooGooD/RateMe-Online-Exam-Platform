@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.container{
+    width: 80%;
+    margin:auto;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height:700px;
+}
+.form-group{
+    margin:10px;
+}
+input{
+    padding:15px 20px;
+    outline: none;
+    border:none;
+    border:1px solid rgb(221, 219, 219);
+    border-radius: 10px;
+}
+button{
+    border:none;
+    outline: none;
+    color:white;
+    background-color: rgb(11, 85, 223);
+    padding:12px 25px;
+    border-radius:10px;
+    transition:all 0.5s ease-in;
+}
+button:hover{
+    background-color: rgb(7, 94, 255);
+}
+</style>
+<body>
+<div class="container">
+<form action="login" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <input type="text" placeholder="username or email" name="email">
+    </div>
+    <div class="form-group">
+        <input type="password" placeholder="password" name="password">
+    </div>
+    {% if my_context.logout_status == 1 %}
+    <small>You have been logged out successfully  </small>
+    {% endif %}
+
+
+    <div class="form-group">
+        <button type="submit">Login</button>
+    </div>
+
+</form>
+
+</div>
+   
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block thanks_page %} 
+<div class="container mt-5">
+
+
+<div class="jumbotron">
+    <h1>Thanks for using our platform. Hope you had a great experience</h1>
+    <p class="text-dark">Your test was successfully submitted {{ request.session.email }}</p>
+    <hr class="my-4">
+   
+    <p class="lead text-center">
+      <a class="btn btn-primary btn-lg " href="#" role="button">Learn more</a>
+    </p>
+  </div>
+</div>
+
+
+
+{% endblock %}

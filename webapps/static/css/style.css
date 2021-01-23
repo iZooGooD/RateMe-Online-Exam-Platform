@@ -1,0 +1,392 @@
+* {
+    margin:0;
+    box-sizing: border-box;
+    padding:0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+._navbar {
+    background-image: linear-gradient(to right, #1346d6, #0057dd, #0066e3, #0075e8, #1283eb);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:60px;
+    width: 100%;
+
+}
+._navbar ul{
+    list-style: none;
+    display:flex;
+    margin: auto;
+    margin:auto!important;
+    
+
+
+  
+}
+._navbar-branding{
+    
+    margin: auto!important;
+    color:white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 22px;
+    padding:15px!important;
+    text-decoration: none!important;
+    
+}
+._navbar-branding:hover{
+    color:white;
+}
+
+._navbar ul li{
+ 
+}
+
+._navbar ul li a{
+    text-decoration: none;
+    color:white;
+    padding:15px!important;
+}
+
+._navbar li:hover{
+    
+
+}
+
+
+/* hero section */
+
+.hero-section{
+
+    background-image: linear-gradient(to right, #1346d6, #0057dd, #0066e3, #0075e8, #1283eb);
+    height:400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0!important;
+    
+}
+.hero-section div{
+    max-width: 450px;
+
+}
+
+.section-title-lg{
+    color:white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;
+   
+
+}
+.section-text{
+    color:white;
+}
+
+.hero-section img{
+    height:250px;
+    width:400px;
+    border-radius:20px;
+}
+
+.hero-button{
+    border:none;
+    text-transform: uppercase;
+    background-color:#FF3D8A;
+    color:white;
+    padding:10px 15px!important;
+    border-radius: 10px;
+    font-size:0.9rem;
+    text-decoration: none;
+}
+.hero-button:hover{
+    text-decoration: none;
+    color:white;
+
+}
+
+/* signu up page */
+
+.side-page{
+    background-image: linear-gradient(to right, #1346d6, #0057dd, #0066e3, #0075e8, #1283eb);
+    
+    height:550px;
+    background-position: center;
+    background-size: cover;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.l-0 input{
+    width:45%!important;    
+}
+.l-0 input:last-child{
+    margin-left: 5%;
+}
+
+ .l-1 input{
+ width:96%!important;
+    
+}
+.l-2 input{
+    width:96%!important;
+       
+   }
+   .l-3 input{
+    width:96%!important;
+       
+   }
+   ._form-control{
+       padding:10px!important;
+   }
+
+   .uform button{
+     border:none;
+     padding:10px 15px!important;
+     border-radius:8px;
+   }
+.uform{
+  
+    background-color: white!important;
+    border-radius: 20px;
+    
+    display: flex;
+
+  
+
+    
+}
+   
+.main{
+    height:800px;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+   
+}
+
+.side-page{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+   
+}
+
+.side-page h4,p{
+    color:white;
+    
+}
+
+.uform input{
+    border:none;
+    border-bottom:1px solid rgb(235,235,235);
+    outline: none;
+}
+
+
+.dashboard-button{
+    border:none;
+    height:120px;
+    padding:20px!important;
+    background-color: #475b85;
+    transition:all 0.3s ease-in;
+  outline:none;
+    color:white;
+    margin:10px;
+   
+}
+
+.dashboard-button:hover{
+    background-color: #314c86;
+}
+
+.dashboard-tests{
+  
+    padding:10px;
+}
+.my-test{
+    background-color: white;
+    margin:10px;
+    padding:15px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+}
+
+.my-test-fields{
+    margin:2px;
+    color:black;
+}
+.mytest {
+background-color: rgb(248,248,248);
+
+}
+.my-test:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.mytest h4{
+    color:#314c86;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.my-test-icons{
+    color:#FF3D8A;
+}
+
+.headline{
+    display: flex;
+}
+.headline input{
+    outline: none;
+    margin-left: 5px;
+    border:none;
+    border-bottom: 1px solid #FF3D8A;
+}
+
+._section{
+    margin:10px;
+    border:2px solid #0057dd;
+    padding:10px;
+    border-radius: 20px;
+}
+
+/** user test section **/
+
+.question-active{
+    display: block;
+}
+.question-notactive{
+    display: none;
+}
+.user-top-bar{
+    background-color: rgb(221, 223, 226);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+    
+}
+
+.user-top-bar p{
+    margin:2px;
+}
+.user-top-bar div{
+    padding:10px;
+
+}
+
+.user-top-bar div:last-child{
+    margin-left: auto;
+    
+}
+
+.user-top-bar div:nth-child(2){
+    margin: auto;
+}
+
+
+
+.user-top-bar button{
+    border:none;
+    padding:7px 15px;
+    color:white;
+    background-color: #0057dd;
+}
+
+.exam-section-overview{
+    border-radius: 10px;
+    background-color: rgb(221, 223, 226);
+}
+.exam-section-question_overview-container{
+   
+    
+    display: flex;
+    flex-wrap: wrap;
+
+
+}
+
+.question-box-unanswered{
+    cursor: pointer;
+    background-color: rgb(148, 13, 20);
+    margin:10px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    color:white;
+}
+.question-box-answered{
+    cursor: pointer;
+    background-color: rgb(19, 94, 35);
+    margin:10px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    color:white;
+}
+
+
+.exam-section-main{
+    background-color: rgb(221, 223, 226);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-radius: 10px;
+
+}
+
+._container .container{
+    max-width: 95%!important;
+
+}
+
+.exam-section-main .question{
+   margin:10px;
+
+}
+
+
+
+.choices .choice{
+    margin:10px;
+   
+}
+
+.question-buttons{
+    margin:10px;
+    display: flex;
+}
+.question-buttons button{
+    border:none;
+    padding:7px 15px;
+    color:white;
+    background-color: #0057dd;
+
+}
+
+.question-buttons button:last-child{
+    margin-left:auto;
+   
+}
+
+
+/** join test **/
+
+
+#join-test{
+    display: inline;
+}
+.join-test-instructions{
+    
+    background-color: rgb(221, 223, 226);
+    border-radius: 10px;
+}

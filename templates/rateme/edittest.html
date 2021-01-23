@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% block edit_test %}
+<style>
+.my_card{
+    max-width:220px;
+}
+
+</style>
+<div class="container">
+    <div class="row">
+    <div class="user-form col-6 p-5" >
+       <h4>Edit test details</h4>
+    <form action="{% url 'starttest' %}" method="POST" >
+        {% csrf_token %}
+
+        <div class="form-group l-2">
+            Test name
+            <input type="text" placeholder="{{ test_details.test_name }}" class="_form-control" name="test_id" autocomplete="off">
+        </div>
+
+        <div class="form-group l-2">
+            Time (In minutes)
+            <input type="text" placeholder="{{ test_details.total_time }}" class="_form-control" name="test_id" autocomplete="off">
+        </div>
+     
+    <div class="form-group l-2">
+        Test id/link
+        <input type="text" placeholder="{{ test_details.id }}" class="_form-control" name="test_id" autocomplete="off" disabled>
+    </div>
+
+    <div class="form-group l-2">
+        Test password
+        <input type="password" placeholder="{{ test_details.test_password }}" class="_form-control" name="test_password" autocomplete="off">
+    </div>
+
+ 
+   <div class="text-center mt-3">
+    <button class="hero-button" type="submit">SAVE CHANGES</button>
+   </div>
+    </form>
+    <div class="action my-5">
+        <h6>Delete test ? <a class="btn btn-danger btn-sm text-white" href="javascript:{document.getElementById('deletetest').submit()}">DELETE</a> </h6>
+        
+        </div>
+
+
+
+</div>
+
+<div class="test-stats col-6 p-5 ">
+    <h4>Test statistics</h4>
+    <div class="row no-gutters">
+        
+        <div class="card m-1 my_card">
+            <h6 class="card-header text-center bg-primary text-white">
+            Total questions    
+            </h6>
+            <div class="card-body text-center">
+                {{ test_details.total_question }}
+            </div>
+            </div>
+
+            <div class="card m-1 my_card">
+                <h6 class="card-header text-center bg-secondary text-white">
+                Total Submissions   
+                </h6>
+                <div class="card-body text-center">
+                    {{ test_details.total_submissions }}
+                </div>
+                    
+                </div>
+                
+            <div class="card ml-1 my_card">
+                <h6 class="card-header text-center bg-info text-white">
+                Average score    
+                </h6>
+                <div class="card-body text-center">
+                   None
+                </div>
+                    
+                </div>
+    </div>
+
+
+
+
+
+</div>
+</div>
+<form action="{% url 'delete_test' test_details.id %}" id="deletetest" method="POST">
+    {% csrf_token %}
+    <input type="hidden">
+</form>
+<h5 class="text-center">Lastest test submissions</h5>
+{% if test_details.total_submissions > 0 %}
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Email</th>
+        <th scope="col">Submission date</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Score</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+ {% for entry in submissions %}
+      <tr>
+       <td>{{ entry.email_id }}</td>
+        <td>{{ entry.test_ended }}</td>
+        <td>{{ entry.first_name }}</td>
+        <td>{{ entry.last_name }}</td>
+        <td>{{ entry.total_score }}</td>
+      </tr>
+{% endfor %}
+    </tbody>
+  </table>
+{% else %}
+<div>
+    <h6>No data to display</h6>
+</div>
+
+{% endif %}
+
+
+</div>
+
+
+
+
+
+
+{% endblock %}

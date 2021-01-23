@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block jointest %}
+<div class="main" id="join-test"> 
+    <div class="container  uform" >
+            <div class="user-form col-8 p-5 " >
+            <h4 class="text-center mb-5">Before you proceed we need few details from you.</h4>
+          
+            <form action="{% url 'starttest' %}" method="POST" >
+                {% csrf_token %}
+            <div class="form-group l-0">
+            <input type="text" placeholder="Firstname" class="_form-control" name="fname">
+            <input type="text" placeholder="Lastname" class="_form-control" name="lname">
+            </div>
+            <div class="form-group l-1">
+                <input type="email" placeholder="Email" class="_form-control" name="email">
+            </div>
+             
+            <div class="form-group l-2">
+                <input type="text" placeholder="Test link/url" class="_form-control" name="test_id">
+            </div>
+
+            <div class="form-group l-2">
+                <input type="password" placeholder="Test Password" class="_form-control" name="test_password">
+            </div>
+      
+         
+           <div class="text-center mt-3">
+            <button class="hero-button" type="submit">Start test</button>
+           </div>
+            </form>
+            </div>
+            <div class="join-test-instructions col-4 p-3 mt-3" >
+            <h6 class="text-center">Instructions</h6><hr>
+            <small class="text-muted">
+                *Please ensure you do have a good internet connection, above 1mbps is recommended
+            </small><br><br>
+            <small class="text-muted">
+                *Your answers are automatically saved when you click the next button
+            </small><br><br>
+            <small class="text-muted">
+                *Test window will automatically be closed after the timer ends
+            </small><br><br>
+            <small class="text-muted">
+                *Do not strictly switch tabs, this will let your examiner knew you swtiched your tabs
+            </small><br><br>
+            <small class="text-muted">
+                *Do not minimize your test window
+            </small>
+            </div>
+
+    </div>
+
+    
+    </div>
+
+</div>
+
+{% endblock%}
+
+    
+
+
+
+
+
+
